@@ -1,0 +1,29 @@
+@import "../../../sass/variables";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 45%;
+  justify-content: flex-end;
+
+  img {
+    width: 20%;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    color: $primaryDarkGreen;
+    font-size: $bigFont;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  h2 {
+    color: $white;
+    font-size: $middleFont;
+    font-weight: 700;
+    margin: -0.7rem 0 0 0;
+  }
+}
