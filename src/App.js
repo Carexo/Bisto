@@ -2,14 +2,19 @@ import "./App.scss";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import JoinPage from "./pages/JoinPage";
+import JoinPage from "./pages/JoinPage/JoinPage";
 import SignUpForm from "./components/JoinPageComponents/SignUp/SignUpForm";
 import LogInForm from "./components/JoinPageComponents/LogIn/LogInForm";
+
+import HomePage from "./pages/HomePage/HomePage";
 
 const App = () => {
   return (
     <Router>
       <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
         <Route exact path="/join">
           <JoinPage />
         </Route>
