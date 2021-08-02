@@ -1,0 +1,41 @@
+@import "../../../sass/variables";
+
+.form-wrapper {
+  height: 45%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: $middleBorderRadius;
+
+  background-color: $white;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  font-size: $middleSmallFont;
+  font-weight: 500;
+  height: 4rem;
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .active {
+    border-radius: 1rem 0 0 1rem;
+    background-color: $lightGreen;
+    color: $white;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}

@@ -10,8 +10,17 @@ import joinBackground from "../../images/join-background.jpg";
 const JoinPage = () => {
   return (
     <Background src={joinBackground} className={classes.main}>
-      <JoinHeader />
+      <JoinHeader title={"Welcome in Bisto"} />
+
       <ButtonSection />
+      {/* <Switch>
+        <Route path="/join/log-in" exact>
+          <LogInForm />
+        </Route>
+        <Route path="/join/sign-up" exact>
+          <SignUpForm />
+        </Route>
+      </Switch> */}
     </Background>
   );
 };
