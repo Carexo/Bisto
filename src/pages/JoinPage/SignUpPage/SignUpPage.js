@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 
 import SignUpForm from "../../../components/JoinPageComponents/SignUpForm/SignUpForm";
-import LogInForm from "../../../components/JoinPageComponents/LoginForm/LogInForm";
 import JoinHeader from "../../../components/JoinPageComponents/JoinHeader/JoinHeader";
 
 import Background from "../../../components/UI/Background/Background";
@@ -16,8 +15,7 @@ const SignUpPage = () => {
   return (
     <Background src={joinBackground} className={classes.main}>
       <JoinHeader title={"explore more recipes"} className={classes.header} />
-      {isLogIn && <LogInForm />}
-      {!isLogIn && <SignUpForm />}
+      <SignUpForm isLogIn={isLogIn} />
     </Background>
   );
 };

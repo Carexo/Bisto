@@ -1,27 +1,31 @@
+import { NavLink } from "react-router-dom";
+
 import classes from "./signUpForm.module.scss";
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
+  const { isLogIn } = props;
   return (
     <section className={classes["form-wrapper"]}>
       <div className={classes.nav}>
-        <p>Log in</p>
-        <p className={classes.active}>Sign up</p>
+        <NavLink to="/join/log-in" activeClassName={classes.active}>
+          Log in
+        </NavLink>
+        <NavLink to="/join/sign-up" activeClassName={classes.active}>
+          Sign up
+        </NavLink>
       </div>
       <form className={classes.form}>
-        <div className={classes["input-field"]}>
-          <label>E-mail</label>
-          <input />
-        </div>
+        <section className={classes.inputs}>
+          <input placeholder="Enter email" />
 
-        <div className={classes["input-field"]}>
-          <label>Password</label>
-          <input />
-        </div>
+          <input placeholder="Password" />
 
-        <div className={classes["input-field"]}>
-          <label>Repeat password</label>
-          <input />
-        </div>
+          {!isLogIn && <input placeholder="Repate Password" />}
+        </section>
+        <input
+          type="submit"
+          value={`${isLogIn ? "Log in" : "Create Account"}`}
+        />
       </form>
     </section>
   );

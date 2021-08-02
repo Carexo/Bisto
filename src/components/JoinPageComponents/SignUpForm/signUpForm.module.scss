@@ -1,7 +1,7 @@
 @import "../../../sass/variables";
 
 .form-wrapper {
-  height: 45%;
+  height: auto;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,8 @@
   border-radius: $middleBorderRadius;
 
   background-color: $white;
+
+  z-index: 5;
 }
 
 .nav {
@@ -17,25 +19,94 @@
 
   font-size: $middleSmallFont;
   font-weight: 500;
-  height: 4rem;
+  height: 4.5rem;
 
-  p {
+  a {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     height: 100%;
     width: 100%;
+
+    text-decoration: none;
+
+    color: hsl(0, 0, 0);
+
+    &:active {
+      color: inherit;
+    }
   }
 
   .active {
-    border-radius: 1rem 0 0 1rem;
-    background-color: $lightGreen;
-    color: $white;
+    font-weight: 700;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $lightGreen;
+      width: 30%;
+      height: 0.5rem;
+
+      margin-top: 3.5rem;
+
+      z-index: -1;
+    }
   }
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+
+  .inputs {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  input {
+    width: 60vw;
+    height: 3rem;
+
+    margin-bottom: 2rem;
+    text-indent: 1rem;
+
+    border: none;
+    border-radius: 1rem;
+
+    background-color: $primaryGray;
+
+    &::placeholder {
+      color: $lightBlack;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 2pt 0.5pt $lightGreen;
+    }
+  }
+
+  input[type="submit"] {
+    width: 60vw;
+    height: 4rem;
+
+    background-color: $lightGreen;
+    color: $white;
+    font-weight: 700;
+    font-size: $middleSmallFont;
+
+    border: none;
+    border-radius: 1rem;
+
+    margin-bottom: 2rem;
+    padding: 0.7rem;
+  }
 }
