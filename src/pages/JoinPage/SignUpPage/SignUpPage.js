@@ -1,5 +1,8 @@
 import { useLocation } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { setLogInForm } from "../../../store/authSlice/authSlice";
+
 import SignUpForm from "../../../components/JoinPageComponents/SignUpForm/SignUpForm";
 import JoinHeader from "../../../components/JoinPageComponents/JoinHeader/JoinHeader";
 
@@ -10,12 +13,13 @@ import classes from "./signUpPage.module.scss";
 
 const SignUpPage = () => {
   const { pathname } = useLocation();
-  const isLogIn = pathname === "/join/log-in";
+  const dispatch = useDispatch();
+  dispatch(setLogInForm(pathname === "/join/log-in"));
 
   return (
     <Background src={joinBackground} className={classes.main}>
       <JoinHeader title={"explore more recipes"} className={classes.header} />
-      <SignUpForm isLogIn={isLogIn} />
+      <SignUpForm />
     </Background>
   );
 };
