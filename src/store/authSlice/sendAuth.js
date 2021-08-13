@@ -5,19 +5,19 @@ import axios from "axios";
 export const sendAuth = createAsyncThunk(
   "/auth/sendAuth",
   async (userData, { getState, rejectWithValue }) => {
+    const apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
+
     const {
-      auth: { keyAPI, logInForm },
+      auth: { logInForm },
     } = getState();
     const { email, password } = userData;
-
-    console.log(logInForm);
 
     try {
       const response = await axios({
         method: "POST",
         url: `https://identitytoolkit.googleapis.com/v1/accounts:${
           logInForm ? "signInWithPassword" : "signUp"
-        }?key=${keyAPI}`,
+        }?key=${apiKey}`,
         data: { email, password, returnSecureToken: true },
         headers: { "Content-Type": "application/json" },
       });

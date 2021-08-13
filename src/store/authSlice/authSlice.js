@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { sendAuth } from "./sendAuth";
 
 const initialState = {
-  keyAPI: "AIzaSyDP0DSSrrHLRJbdcjED1-72JxMmDoXlGkU",
   token: localStorage.getItem("token"),
   isLoggedIn: localStorage.getItem("isLoggedIn"),
   logInForm: false,
