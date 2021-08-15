@@ -1,5 +1,46 @@
 @import "../../../sass/variables";
 
 .nav {
+  display: flex;
+  align-items: center;
+
   background: $primaryGreen;
+  height: 10vh;
+  width: 100%;
+
+  img {
+    flex-grow: 4;
+    height: 50%;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 20%;
+
+  flex: 2;
+
+  button {
+    width: 3rem;
+    height: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+  }
+
+  .search {
+    background-image: url(../../../images/search-icon.svg);
+  }
+
+  .menu {
+    background-image: url(../../../images/menu-icon.svg);
+  }
 }

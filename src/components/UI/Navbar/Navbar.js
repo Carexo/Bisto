@@ -6,6 +6,10 @@ const Navbar = () => {
   return (
     <nav className={classes.nav}>
       <img src={whiteLogo} alt="white bisto logo" />
+      <div className={classes.buttons}>
+        <button className={classes.search}></button>
+        <button className={classes.menu}></button>
+      </div>
     </nav>
   );
 };
